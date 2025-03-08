@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #000000, #3b0c59, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            font-family: Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            font-style: normal;
+        }
+
+        h1 {
+            font-family: Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            font-style: normal;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Nunito:wght@400;700&display=swap');
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-purple-300">
+    <div class="h-screen flex flex-col justify-center items-center">
+        <h1 class="text-5xl font-extrabold mb-8">OptiQ</h1>
+
+        <div class="w-2/3">
+            <input type="text" placeholder="Search..." class="w-full p-4 text-lg rounded-md text-black">
+        </div>
+        <div class="w-2/3 mt-4">
+            <a href="stocks.html" class="block w-full text-center px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg rounded-md">Personalize</a>
+        </div>
+    </div>
+
+    <div class="mt-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl mb-6">Current Stock News</h2>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="bg-purple-900 p-8 rounded-md shadow-lg fade-in" id="news1">
+                    <h3 class="text-2xl font-bold mb-4">Stock Market News, Jan. 15, 2025: Dow, S&P 500 and Nasdaq end sharply higher...</h3>
+                    <p>Wall Street sees best CPI day since at least late 2023; Goldman Sachs and JPMorgan kick off the new earnings season</p>
+                </div>
+                <div class="bg-purple-900 p-8 rounded-md shadow-lg fade-in" id="news2">
+                    <h3 class="text-2xl font-bold mb-4">Stock Market News: Dow Surges After CPI Inflation Report, Big Bank Earnings</h3>
+                    <p>The S&P 500 and Nasdaq also rose sharply Wednesday.</p>
+                </div>
+                <div class="bg-purple-900 p-8 rounded-md shadow-lg fade-in" id="news3">
+                    <h3 class="text-2xl font-bold mb-4">Wall Street soars on record bank profits and cooling inflation</h3>
+                    <p>US stocks surged higher Wednesday after an encouraging inflation report and blockbuster profits for some of Americas biggest banks.</p>
+                </div>
+                <div class="bg-purple-900 p-8 rounded-md shadow-lg fade-in" id="news4">
+                    <h3 class="text-2xl font-bold mb-4">Rigetti Computing CEO after a 48% spike in stock price: We have to tamp down expectations</h3>
+                    <p>The explosive move in Rigetti Computing's (RGTI) stock has its CEO cautioning investors that it will take time for the company to post sustainable sales growth and profits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
