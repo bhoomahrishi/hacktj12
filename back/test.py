@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
-#from find_stocks import stock_list
+from find_stocks import stock_list
 app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
