@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
-
+from find_stocks import stock_list
 app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
@@ -17,6 +17,7 @@ def home():
 def stocks():
     prompt = request.args.get("prompt")
     a=['AAPL', 'MSFT', 'TSLA', 'AMZN', 'GOOGL', 'META', 'NVDA', 'NFLX', 'ADBE']
+    #a = stock_list(prompt)
     b=[145.67, 310.23, 670.50, 3350.25, 2800.65, 350.45, 220.75, 620.30, 680.90]
     return render_template("stocks.html", x=a, y=b)
 
