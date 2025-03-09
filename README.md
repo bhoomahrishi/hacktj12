@@ -1,1 +1,1 @@
-HackTJ 12.0 Project
+HackTJ 12.0 Project - OptiQ
