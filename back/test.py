@@ -16,7 +16,7 @@ def home():
 @app.route("/stocks.html")
 def stocks():
     prompt = request.args.get("prompt")
-    a=['AAPL', 'MSFT', 'TSLA', 'AMZN', 'GOOGL', 'META', 'NVDA', 'NFLX', 'ADBE']
+    a=['MSFT', 'CAT', 'GILD', 'ECL', 'DLR', 'EFX', 'TTWO', 'ARE', 'DPZ', 'FFIV']
     #a = stock_list(prompt)
     return render_template("stocks.html", x=a)
 

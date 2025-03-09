@@ -89,12 +89,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="flex flex-col items-center fade-in" style="animation-delay: 1s;">
-                <img src="templates/static/bar_graph.png" alt="Bar Graph" class="rounded-md shadow-lg mb-4">
+                <img src="{{ url_for('static', filename='images/bar_graph.png')}}" alt="Bar Graph" class="rounded-md shadow-lg mb-4">
                 <p class="text-center text-lg">This bar graph represents the proportion of each stock in the optimized portfolio.</p>
                 <a href="portfolio_details.html" class="mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-md">View Portfolio Details</a>
             </div>
             <div class="flex flex-col items-center fade-in" style="animation-delay: 1.5s;">
-                <img src="templates/static/line_graph.png" alt="Line Graph" class="rounded-md shadow-lg mb-4">
+                <img src="{{ url_for('static', filename='images/line_graph.png')}}" alt="Line Graph" class="rounded-md shadow-lg mb-4">
                 <p class="text-center text-lg">This line graph compares the historical performance of the optimized portfolio against the S&P 500.</p>
                 <a href="algorithm_comparison.html" class="mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-md">Learn More About the Algorithm</a>
             </div>
